@@ -5,7 +5,7 @@ Este repositório contém uma análise detalhada da produtividade de equipamento
 
 ## 1.1 Contexto
 
-O projeto foi desenvolvido com dados de produtividade de uma indústria química que produz mais de 120 produtos em aproximadamente 20 linhas de produção.
+O projeto foi desenvolvido com dados de produtividade de uma indústria química que fabrica mais de 120 produtos em aproximadamente 20 linhas de produção. Existem cerca de 10 tipos de embalagens, embora nem todos os equipamentos processem todas elas, resultando em 48 combinações distintas de equipamento/SKU.
 
 A empresa estabeleceu metas de produção por hora específicas para cada combinação de produto e equipamento. Diariamente, os dados de produção são reportados e comparados com as metas, permitindo avaliar o andamento do planejamento e identificar itens com baixa eficiência, com base na meta global (benchmark) de 85% de eficiência mínima. No final de cada mês, os resultados e os planos de ação são apresentados à liderança, incluindo a presidência.
 
@@ -38,7 +38,7 @@ Os dados foram coletados a partir de arquivos de Excel e do sistema ERP (SAP).
 Arquivos coletados:
 - **1. Lista de equipamentos.xlsx** - Planilha com informações dos equipamentos.
 - **2. Lista SKU.xlsx** - Relatório do ERP detalhando os produtos.
-- **3. PRODUCAO XX.xlsx** - Dados históricos de produção, coletados em tempo real por sensores.
+- **3. PRODUCAO ENVASE BALANCA.xlsx** - Dados históricos de produção, coletados em tempo real por sensores.
 - **4. Produtividade equipamentos.xlsx** - Planilha com metas de produtividade.
 
 Uma análise inicial foi realizada para entender as variáveis disponíveis.
@@ -68,33 +68,37 @@ As tabelas e gráficos gerados foram exportados para Excel e PowerPoint, de acor
 
 #  3. Resultados
 Para o relatório gerencial exportado em powerpoint, temos os seguintes gráficos apresentados
-- Comparativo meta, mediana de produtividade e máxima capacidade histórica por tipo de embalagem
-- Mapa produtividade (%) vs quantidade de horas por equipamento/hora para priorização do plano de ação
-- Resumo por equipamento da distribuição histórica de produtividade vs meta e mediana (1 slide por equipamento)
+- Comparativo entre meta, mediana de produtividade e capacidade máxima histórica por tipo de embalagem.
+- Mapa de produtividade (%) versus quantidade de horas por equipamento/SKU, usado para priorizar o plano de ação.
+- Resumo por equipamento com a distribuição histórica de produtividade versus meta e mediana por SKU (1 slide por equipamento).
 
 
 
 # 3.1 Metas
-Foi feito para cada tipo de embalagem, um gráfico da mediana, meta e máximo para comparativo, conforme gráfico abaixo. Pode-se constatar que dos 20 equipamentos, apenas 3 não tiveram um valor máximo de produtividade (L/h) maior ou igual a meta (por exemplo, o EQ-3 para 2L, conforme gráfico abaixo - máximo de 8300 vs meta de 10.000. Para esses equipamentos, foi solicitado a engenharia fazer uma análise mais apronfundada se necessitamos fazer alguma adequação ou reforma do equipamento para atingimento da meta ou se seria necessário reduzir a meta no planejamento.
-
+Para cada tipo de embalagem, foi criado um gráfico comparativo entre a mediana, a meta e o máximo histórico de produtividade. 
+Durante o estudo, constatamos que, dos 48 equipamentos analisados, apenas 3 não atingiram um valor máximo de produtividade (L/h) igual ou superior à meta. Por exemplo, o equipamento EQ-3 para embalagens de 2L alcançou um máximo de 8.300 L/h, abaixo da meta de 10.000 L/h (conforme o gráfico abaixo). Nesses casos, a equipe de engenharia foi acionada para avaliar se são necessárias adequações ou reformas nos equipamentos, ou se a meta deve ser ajustada no planejamento.
 
 
 
 ![Produtividade por equipamento](./Images/Produtividade%202L%20por%20equipamento.PNG)
 
 # 3.2 Mapa de produtividade
-Foi feito uma visão sumarizada da produvidade vs quantidade de horas produzidas para as combinações equipamentos/SKU. Com isso, pode-se visualizar os principais equipamentos/SKUs que devem ser priorizados.
-Dentro do retãngulo vermelho, temos 7 equipamentos/SKUs que representam 85% das horas produzidas, ou seja, são aqueles com maior impacto para produtividade da fábrica. 
-A linha azul representa o threshold de 85% de produtividade. Acima, os equipamentos/SKUs (EQ-10 20L e EQ10 15L) estão acima da produtivididade mínima e estão ok. Abaixo (5 deles) são aqueles que é necessário priorizar para aumento de produtividade com destaque para o EQ7-12L representando quase 600h de produção e bem acima dos outros 4. Com isso, pode-se focar em poucos equipamentos/SKUs, reduzindo o custo de implementação de melhorias.
+Foi gerado um gráfico de produtividade versus quantidade de horas produzidas por equipamento/SKU, destacando as principais combinações a serem priorizadas. No retângulo vermelho, identificamos 7 equipamentos/SKUs que representam 85% das horas produzidas, sendo os de maior impacto na produtividade da fábrica.
+
+A linha azul marca o limite de 85% de produtividade. Equipamentos/SKUs acima dessa linha (como EQ-10 20L e EQ-10 15L) estão dentro do esperado. Já os 5 equipamentos/SKUs dentro do retângulo vermelho, mas abaixo da linha, requerem ações prioritárias para aumento de produtividade. Isso permite um foco mais eficiente e redução de custos nas melhorias. Dentre eles, destaca-se o EQ7-12L, com quase 600 horas de produção, que demanda atenção especial.
+
 
 ![Produtividade geral](./Images/Sumário%20Ajustado.PNG)
 
 # 3.3 Resumo por equipamento
-Para cada equipamento, foi feito um slide contendo um histograma da produtividade por SKU para verificação das produtividades mais frequentes, mediana do valor e meta. Abaixo um exemplo referente ao equipamento 18.
+Para cada equipamento, foi criado um slide contendo um histograma da produtividade por SKU, destacando os valores mais frequentes, a mediana e a meta de produtividade. Abaixo, um exemplo do equipamento 17:
 
-Pode-se notar que 
-- Para SKU de 1L: Máximo e meta muito próximos, sem necessidade de revisão do valor da meta. Alta frequência de valores acima de 4.000, o que nos leva a concluir que temos um bom histórico com esse equipamento
-- Para SKU de 6L: Máximo acima da meta., avaliar se seria factível reivsar as metas para cima, considerando o bom histórico. Dispersão muito alta para valores abaixo de 8.000, como plano de ação a área poderia investigar a alta variabilidade 
+- SKU 3L: A máxima produtividade está muito próxima da meta, indicando que não é necessário revisar o valor da meta. Há uma alta frequência de valores acima de 4.000 L/h, demonstrando um bom desempenho histórico do equipamento.
+- SKU 20L: A máxima produtividade está acima da meta, sugerindo que é possível revisar as metas para cima, dado o bom desempenho histórico. No entanto, há uma alta dispersão de valores abaixo de 8.000 L/h, o que indica a necessidade de investigar a variabilidade e tomar ações corretivas.
 
-<img src="./Images/Produtividade%20EQ18.png" alt="Resumo por equipamento" width="2000"/>
+![Produtividade EQ17](./Images/Produtividade%20EQ17.png)
 
+# 4.0 Conclusão
+O estudo revelou a necessidade de revisar ao menos 3 das metas estabelecidas, o que demonstra, no geral, uma boa qualidade na definição das metas dos equipamentos, com **94% de acurácia**. Além disso, a análise permitiu concentrar os esforços em apenas 5 equipamentos/SKUs, **uma redução de cerca de 90% em relação às 48 combinações totais. Isso gera maior eficiência e contribui para a redução de custos da empresa.**
+
+Como se trata de um processo semi-automático de geração de relatórios, que exige apenas o download do histórico de produção, ele pode ser facilmente executado mensalmente. Isso permite **acompanhar o status** das produtividades e comparar com os meses anteriores, facilitando a análise da **evolução das ações e da produtividade.**
