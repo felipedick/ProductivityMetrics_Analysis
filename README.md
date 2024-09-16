@@ -87,7 +87,7 @@ Foi feito uma visão sumarizada da produvidade vs quantidade de horas produzidas
 Dentro do retãngulo vermelho, temos 7 equipamentos/SKUs que representam 85% das horas produzidas, ou seja, são aqueles com maior impacto para produtividade da fábrica. 
 A linha azul representa o threshold de 85% de produtividade. Acima, os equipamentos/SKUs (EQ-10 20L e EQ10 15L) estão acima da produtivididade mínima e estão ok. Abaixo (5 deles) são aqueles que é necessário priorizar para aumento de produtividade com destaque para o EQ7-12L representando quase 600h de produção e bem acima dos outros 4. Com isso, pode-se focar em poucos equipamentos/SKUs, reduzindo o custo de implementação de melhorias.
 
-![Produtividade geral] (./Images/Sumário%20Ajustado.PNG)
+![Produtividade geral](./Images/Sumário%20Ajustado.PNG)
 
 # 3.3 Resumo por equipamento
 Para cada equipamento, foi feito um slide contendo um histograma da produtividade por SKU para verificação das produtividades mais frequentes, mediana do valor e meta. Abaixo um exemplo referente ao equipamento 18.
@@ -96,5 +96,5 @@ Pode-se notar que
 - Para SKU de 1L: Máximo e meta muito próximos, sem necessidade de revisão do valor da meta. Alta frequência de valores acima de 4.000, o que nos leva a concluir que temos um bom histórico com esse equipamento
 - Para SKU de 6L: Máximo acima da meta., avaliar se seria factível reivsar as metas para cima, considerando o bom histórico. Dispersão muito alta para valores abaixo de 8.000, como plano de ação a área poderia investigar a alta variabilidade 
 
-![Resumo por equipamento](./Images/Produtividade%20EQ18.png)
+<img src="./Images/Produtividade%20EQ18.png" alt="Resumo por equipamento" width="2000"/>
 
