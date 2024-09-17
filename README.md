@@ -14,7 +14,11 @@ O objetivo deste estudo foi:
 
 ### Jupyter Notebook / Google Colab
 O projeto foi desenvolvido no Google Colab. Você pode acessá-lo através do link:
-[Ver Projeto no Colab](LINK)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipedick/ProductivityMetrics_Analysis/blob/main/[Github]_Produtividade_hora_envase_sem_dados.ipynb)
+
+
+
 
 ### Bibliotecas Utilizadas
 - `Pandas`
